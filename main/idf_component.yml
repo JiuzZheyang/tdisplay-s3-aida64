@@ -1,5 +1,4 @@
 version: "1.0.0"
 description: T-Display-S3 AIDA64 Monitor
-dependencies:
-  espressif/lvgl: "^8.4.0"
-  espressif/esp_lvgl_port: "^2.4.0"
+requires:
+  - lvgl/lvgl

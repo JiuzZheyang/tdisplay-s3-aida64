@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 #include "freertos/FreeRTOS.h"
 #include "freertos/task.h"
 #include "esp_system.h"
@@ -7,9 +8,8 @@
 #include "nvs_flash.h"
 #include "esp_netif.h"
 #include "esp_event.h"
-#include "esp_ip4_addr.h"
 
-#include "lcd_spi.h"
+#include "lcd_i80.h"
 #include "lv_port.h"
 #include "aida64.h"
 #include "ui.h"

@@ -12,17 +12,15 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install ESP-IDF
-        uses: espressif/setup-esp-idf@v4
-        with:
-          version: v5.5
-          components: esp_lvgl_port
-
       - name: Build firmware
-        run: |
-          . $IDF_PATH/export.sh
-          idf.py set-target esp32s3
-          idf.py build
+        uses: espressif/esp-idf-ci-action@v1
+        with:
+          path: ''
+          esp_idf_version: v5.4
+          target: esp32s3
+          command: |
+            idf.py set-target esp32s3
+            idf.py build
 
       - name: Upload firmware
         if: success()
