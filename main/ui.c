@@ -11,7 +11,7 @@ static const char *TAG = "ui";
 #define C_GPU      0xF59E0B   /* GPU 橙 */
 #define C_TEXT     0xE8AF0    /* 主文字白 */
 #define C_TEXT2    0x6B7280   /* 副文字灰 */
-#define C_DIVIDER  0x2A2D35   /* 分隔线 */
+#define C_DIVIDER  0x1E2330   /* 分隔线 */
 
 /* ===== 对象句柄 ===== */
 static lv_obj_t *cpu_pct_lbl;
@@ -29,152 +29,137 @@ void ui_init(void)
     lv_obj_set_style_bg_color(lv_scr_act(), lv_color_hex(C_BG), 0);
 
     /* ============================================================
-     * 整屏 170×320 竖屏，无顶栏/底栏：
-     *   y=0..10   : 列标题 CPU / GPU
-     *   y=44      : 列标题底部分隔线（通栏）
-     *   y=50      : "占用率" 标签
-     *   y=68      : 百分比大字 32px
-     *   y=126     : "温度" 标签
-     *   y=142     : 温度值 18px
-     *   y=178     : 分隔线
-     *   y=184     : "功率" 标签
-     *   y=200     : 功率值 18px
-     *   底部留空 y=240..320
+     * 整屏 170×320 竖屏，表格布局：
+     *   y=0..30   : 表头 CPU | GPU
+     *   y=30..66  : 占用率
+     *   y=66..102 : 温度
+     *   y=102..138: 功率
      * ============================================================ */
 
-    /* ----- 列标题 ----- */
+    /* ----- 表头分隔线 ----- */
+    lv_obj_t *hdiv = lv_line_create(lv_scr_act());
+    static lv_point_precise_t pts_h[] = {{0, 30}, {170, 30}};
+    lv_line_set_points(hdiv, pts_h, 2);
+    lv_obj_set_style_line_color(hdiv, lv_color_hex(C_DIVIDER), 0);
+    lv_obj_set_style_line_width(hdiv, 1, 0);
+
+    /* ----- 列标题：CPU / GPU ----- */
     lv_obj_t *cpu_hdr = lv_label_create(lv_scr_act());
     lv_label_set_text(cpu_hdr, "CPU");
     lv_obj_set_style_text_color(cpu_hdr, lv_color_hex(C_CPU), 0);
-    lv_obj_set_style_text_font(cpu_hdr, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(cpu_hdr, 6, 6);
+    lv_obj_set_style_text_font(cpu_hdr, &lv_font_montserrat_14, 0);
+    lv_obj_align(cpu_hdr, LV_ALIGN_TOP_LEFT, 6, 6);
 
     lv_obj_t *gpu_hdr = lv_label_create(lv_scr_act());
     lv_label_set_text(gpu_hdr, "GPU");
     lv_obj_set_style_text_color(gpu_hdr, lv_color_hex(C_GPU), 0);
-    lv_obj_set_style_text_font(gpu_hdr, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(gpu_hdr, 110, 6);
-
-    /* 列标题底部分隔线 */
-    lv_obj_t *l1 = lv_line_create(lv_scr_act());
-    static lv_point_precise_t pts1[] = {{0, 44}, {170, 44}};
-    lv_line_set_points(l1, pts1, 2);
-    lv_obj_set_style_line_color(l1, lv_color_hex(C_DIVIDER), 0);
-    lv_obj_set_style_line_width(l1, 1, 0);
+    lv_obj_set_style_text_font(gpu_hdr, &lv_font_montserrat_14, 0);
+    lv_obj_align(gpu_hdr, LV_ALIGN_TOP_RIGHT, -6, 6);
 
     /* ----- 中央垂直分隔线 ----- */
-    lv_obj_t *lv = lv_line_create(lv_scr_act());
-    static lv_point_precise_t ptsv[] = {{85, 50}, {85, 270}};
-    lv_line_set_points(lv, ptsv, 2);
-    lv_obj_set_style_line_color(lv, lv_color_hex(C_DIVIDER), 0);
-    lv_obj_set_style_line_width(lv, 1, 0);
+    lv_obj_t *cv = lv_line_create(lv_scr_act());
+    static lv_point_precise_t pts_cv[] = {{85, 32}, {85, 320}};
+    lv_line_set_points(cv, pts_cv, 2);
+    lv_obj_set_style_line_color(cv, lv_color_hex(C_DIVIDER), 0);
+    lv_obj_set_style_line_width(cv, 1, 0);
 
     /* ============================================================
-     * CPU 列（x=4..81）
+     * 第1行：占用率
      * ============================================================ */
-    /* 占用率标签 */
     lv_obj_t *cpu_pct_l = lv_label_create(lv_scr_act());
     lv_label_set_text(cpu_pct_l, "占用率");
     lv_obj_set_style_text_color(cpu_pct_l, lv_color_hex(C_TEXT2), 0);
     lv_obj_set_style_text_font(cpu_pct_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(cpu_pct_l, 6, 50);
+    lv_obj_align(cpu_pct_l, LV_ALIGN_TOP_LEFT, 6, 36);
 
-    /* 占用率数值 */
     cpu_pct_lbl = lv_label_create(lv_scr_act());
     lv_label_set_text(cpu_pct_lbl, "--%");
     lv_obj_set_style_text_color(cpu_pct_lbl, lv_color_hex(C_CPU), 0);
-    lv_obj_set_style_text_font(cpu_pct_lbl, &lv_font_montserrat_32, 0);
-    lv_obj_set_pos(cpu_pct_lbl, 6, 68);
+    lv_obj_set_style_text_font(cpu_pct_lbl, &lv_font_montserrat_18, 0);
+    lv_obj_align(cpu_pct_lbl, LV_ALIGN_TOP_LEFT, 6, 52);
 
-    /* 温度标签 */
-    lv_obj_t *ct_l = lv_label_create(lv_scr_act());
-    lv_label_set_text(ct_l, "温度");
-    lv_obj_set_style_text_color(ct_l, lv_color_hex(C_TEXT2), 0);
-    lv_obj_set_style_text_font(ct_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(ct_l, 6, 126);
-
-    /* 温度数值 */
-    cpu_temp_lbl = lv_label_create(lv_scr_act());
-    lv_label_set_text(cpu_temp_lbl, "--°C");
-    lv_obj_set_style_text_color(cpu_temp_lbl, lv_color_hex(C_TEXT), 0);
-    lv_obj_set_style_text_font(cpu_temp_lbl, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(cpu_temp_lbl, 6, 142);
-
-    /* 分隔线 */
-    lv_obj_t *lc1 = lv_line_create(lv_scr_act());
-    static lv_point_precise_t pts_c1[] = {{6, 176}, {80, 176}};
-    lv_line_set_points(lc1, pts_c1, 2);
-    lv_obj_set_style_line_color(lc1, lv_color_hex(C_DIVIDER), 0);
-    lv_obj_set_style_line_width(lc1, 1, 0);
-
-    /* 功率标签 */
-    lv_obj_t *cp_l = lv_label_create(lv_scr_act());
-    lv_label_set_text(cp_l, "功率");
-    lv_obj_set_style_text_color(cp_l, lv_color_hex(C_TEXT2), 0);
-    lv_obj_set_style_text_font(cp_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(cp_l, 6, 182);
-
-    /* 功率数值 */
-    cpu_power_lbl = lv_label_create(lv_scr_act());
-    lv_label_set_text(cpu_power_lbl, "--W");
-    lv_obj_set_style_text_color(cpu_power_lbl, lv_color_hex(C_TEXT), 0);
-    lv_obj_set_style_text_font(cpu_power_lbl, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(cpu_power_lbl, 6, 198);
-
-    /* ============================================================
-     * GPU 列（x=89..170）
-     * ============================================================ */
-    /* 占用率标签 */
     lv_obj_t *gpu_pct_l = lv_label_create(lv_scr_act());
     lv_label_set_text(gpu_pct_l, "占用率");
     lv_obj_set_style_text_color(gpu_pct_l, lv_color_hex(C_TEXT2), 0);
     lv_obj_set_style_text_font(gpu_pct_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(gpu_pct_l, 94, 50);
+    lv_obj_align(gpu_pct_l, LV_ALIGN_TOP_RIGHT, -6, 36);
 
-    /* 占用率数值 */
     gpu_pct_lbl = lv_label_create(lv_scr_act());
     lv_label_set_text(gpu_pct_lbl, "--%");
     lv_obj_set_style_text_color(gpu_pct_lbl, lv_color_hex(C_GPU), 0);
-    lv_obj_set_style_text_font(gpu_pct_lbl, &lv_font_montserrat_32, 0);
-    lv_obj_set_pos(gpu_pct_lbl, 94, 68);
+    lv_obj_set_style_text_font(gpu_pct_lbl, &lv_font_montserrat_18, 0);
+    lv_obj_align(gpu_pct_lbl, LV_ALIGN_TOP_RIGHT, -6, 52);
 
-    /* 温度标签 */
-    lv_obj_t *gt_l = lv_label_create(lv_scr_act());
-    lv_label_set_text(gt_l, "温度");
-    lv_obj_set_style_text_color(gt_l, lv_color_hex(C_TEXT2), 0);
-    lv_obj_set_style_text_font(gt_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(gt_l, 94, 126);
+    /* 行分隔线 */
+    lv_obj_t *r1div = lv_line_create(lv_scr_act());
+    static lv_point_precise_t pts_r1[] = {{0, 74}, {170, 74}};
+    lv_line_set_points(r1div, pts_r1, 2);
+    lv_obj_set_style_line_color(r1div, lv_color_hex(C_DIVIDER), 0);
+    lv_obj_set_style_line_width(r1div, 1, 0);
 
-    /* 温度数值 */
+    /* ============================================================
+     * 第2行：温度
+     * ============================================================ */
+    lv_obj_t *cpu_temp_l = lv_label_create(lv_scr_act());
+    lv_label_set_text(cpu_temp_l, "温度");
+    lv_obj_set_style_text_color(cpu_temp_l, lv_color_hex(C_TEXT2), 0);
+    lv_obj_set_style_text_font(cpu_temp_l, &lv_font_montserrat_12, 0);
+    lv_obj_align(cpu_temp_l, LV_ALIGN_TOP_LEFT, 6, 80);
+
+    cpu_temp_lbl = lv_label_create(lv_scr_act());
+    lv_label_set_text(cpu_temp_lbl, "--°C");
+    lv_obj_set_style_text_color(cpu_temp_lbl, lv_color_hex(C_TEXT), 0);
+    lv_obj_set_style_text_font(cpu_temp_lbl, &lv_font_montserrat_18, 0);
+    lv_obj_align(cpu_temp_lbl, LV_ALIGN_TOP_LEFT, 6, 96);
+
+    lv_obj_t *gpu_temp_l = lv_label_create(lv_scr_act());
+    lv_label_set_text(gpu_temp_l, "温度");
+    lv_obj_set_style_text_color(gpu_temp_l, lv_color_hex(C_TEXT2), 0);
+    lv_obj_set_style_text_font(gpu_temp_l, &lv_font_montserrat_12, 0);
+    lv_obj_align(gpu_temp_l, LV_ALIGN_TOP_RIGHT, -6, 80);
+
     gpu_temp_lbl = lv_label_create(lv_scr_act());
     lv_label_set_text(gpu_temp_lbl, "--°C");
     lv_obj_set_style_text_color(gpu_temp_lbl, lv_color_hex(C_TEXT), 0);
     lv_obj_set_style_text_font(gpu_temp_lbl, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(gpu_temp_lbl, 94, 142);
+    lv_obj_align(gpu_temp_lbl, LV_ALIGN_TOP_RIGHT, -6, 96);
 
-    /* 分隔线 */
-    lv_obj_t *lg1 = lv_line_create(lv_scr_act());
-    static lv_point_precise_t pts_g1[] = {{94, 176}, {164, 176}};
-    lv_line_set_points(lg1, pts_g1, 2);
-    lv_obj_set_style_line_color(lg1, lv_color_hex(C_DIVIDER), 0);
-    lv_obj_set_style_line_width(lg1, 1, 0);
+    /* 行分隔线 */
+    lv_obj_t *r2div = lv_line_create(lv_scr_act());
+    static lv_point_precise_t pts_r2[] = {{0, 118}, {170, 118}};
+    lv_line_set_points(r2div, pts_r2, 2);
+    lv_obj_set_style_line_color(r2div, lv_color_hex(C_DIVIDER), 0);
+    lv_obj_set_style_line_width(r2div, 1, 0);
 
-    /* 功率标签 */
-    lv_obj_t *gp_l = lv_label_create(lv_scr_act());
-    lv_label_set_text(gp_l, "功率");
-    lv_obj_set_style_text_color(gp_l, lv_color_hex(C_TEXT2), 0);
-    lv_obj_set_style_text_font(gp_l, &lv_font_montserrat_12, 0);
-    lv_obj_set_pos(gp_l, 94, 182);
+    /* ============================================================
+     * 第3行：功率
+     * ============================================================ */
+    lv_obj_t *cpu_pwr_l = lv_label_create(lv_scr_act());
+    lv_label_set_text(cpu_pwr_l, "功率");
+    lv_obj_set_style_text_color(cpu_pwr_l, lv_color_hex(C_TEXT2), 0);
+    lv_obj_set_style_text_font(cpu_pwr_l, &lv_font_montserrat_12, 0);
+    lv_obj_align(cpu_pwr_l, LV_ALIGN_TOP_LEFT, 6, 124);
 
-    /* 功率数值 */
+    cpu_power_lbl = lv_label_create(lv_scr_act());
+    lv_label_set_text(cpu_power_lbl, "--W");
+    lv_obj_set_style_text_color(cpu_power_lbl, lv_color_hex(C_TEXT), 0);
+    lv_obj_set_style_text_font(cpu_power_lbl, &lv_font_montserrat_18, 0);
+    lv_obj_align(cpu_power_lbl, LV_ALIGN_TOP_LEFT, 6, 140);
+
+    lv_obj_t *gpu_pwr_l = lv_label_create(lv_scr_act());
+    lv_label_set_text(gpu_pwr_l, "功率");
+    lv_obj_set_style_text_color(gpu_pwr_l, lv_color_hex(C_TEXT2), 0);
+    lv_obj_set_style_text_font(gpu_pwr_l, &lv_font_montserrat_12, 0);
+    lv_obj_align(gpu_pwr_l, LV_ALIGN_TOP_RIGHT, -6, 124);
+
     gpu_power_lbl = lv_label_create(lv_scr_act());
     lv_label_set_text(gpu_power_lbl, "--W");
     lv_obj_set_style_text_color(gpu_power_lbl, lv_color_hex(C_TEXT), 0);
     lv_obj_set_style_text_font(gpu_power_lbl, &lv_font_montserrat_18, 0);
-    lv_obj_set_pos(gpu_power_lbl, 94, 198);
+    lv_obj_align(gpu_power_lbl, LV_ALIGN_TOP_RIGHT, -6, 140);
 
     lvgl_port_unlock();
-    ESP_LOGI(TAG, "UI initialized: no top/bottom bar, CPU+GPU rate+temp+power");
+    ESP_LOGI(TAG, "UI initialized: table layout CPU+GPU (占用率/温度/功率)");
 }
 
 /* ===== SSE 数据绑定 ===== */
@@ -183,13 +168,13 @@ void set_monitor_param(int cpu_rate, int cpu_temp, int cpu_power,
 {
     lvgl_port_lock(0);
 
-    lv_label_set_text_fmt(cpu_pct_lbl,  "%d%%", cpu_rate);
-    lv_label_set_text_fmt(cpu_temp_lbl, "%d°C", cpu_temp);
-    lv_label_set_text_fmt(cpu_power_lbl, "%dW",  cpu_power);
+    lv_label_set_text_fmt(cpu_pct_lbl,   "%d%%",  cpu_rate);
+    lv_label_set_text_fmt(cpu_temp_lbl,   "%d°C", cpu_temp);
+    lv_label_set_text_fmt(cpu_power_lbl,  "%dW",   cpu_power);
 
-    lv_label_set_text_fmt(gpu_pct_lbl,  "%d%%", gpu_rate);
-    lv_label_set_text_fmt(gpu_temp_lbl, "%d°C", gpu_temp);
-    lv_label_set_text_fmt(gpu_power_lbl, "%dW",  gpu_power);
+    lv_label_set_text_fmt(gpu_pct_lbl,   "%d%%",  gpu_rate);
+    lv_label_set_text_fmt(gpu_temp_lbl,   "%d°C", gpu_temp);
+    lv_label_set_text_fmt(gpu_power_lbl,  "%dW",   gpu_power);
 
     lvgl_port_unlock();
 }
