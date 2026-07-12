@@ -1,4 +1,4 @@
 version: "1.0.0"
 description: T-Display-S3 AIDA64 Monitor
 requires:
-  - lvgl
+  - lvgl/lvgl
