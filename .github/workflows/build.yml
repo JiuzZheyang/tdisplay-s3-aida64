@@ -12,21 +12,23 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Build firmware
-        uses: espressif/esp-idf-ci-action@v1
+      - name: Install ESP-IDF
+        uses: espressif/setup-esp-idf@v4
         with:
-          path: ''
-          esp_idf_version: v5.5
-          target: esp32s3
-          command: |
-            idf.py set-target esp32s3
-            idf.py build
+          version: v5.5
+          components: esp_lvgl_port
 
-      - name: Upload firmware artifact
+      - name: Build firmware
+        run: |
+          . $IDF_PATH/export.sh
+          idf.py set-target esp32s3
+          idf.py build
+
+      - name: Upload firmware
         if: success()
         uses: actions/upload-artifact@v4
         with:
-          name: firmware-tdisplay-s3-aida64
+          name: firmware
           path: build/t_display_s3_aida64.bin
           retention-days: 30
 
