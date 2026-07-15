@@ -127,7 +127,7 @@ static esp_err_t http_config_handler(httpd_req_t *req)
 
         if (!strcmp(key, "sta_ssid"))  snprintf(ssid, sizeof(ssid),  "%s", val);
         if (!strcmp(key, "sta_pass"))  snprintf(pass, sizeof(pass),  "%s", val);
-        if (!strcmp(key, "aida64_ip")) snprintf(aida,  sizeof(aida),   "%s", val);
+        if (!strcmp(key, "aida64_ip")) snprintf(aida,  sizeof(aida),  "%.63s", val);
         while (*p && *p != ',') p++;
         if (*p) p++;
     }
