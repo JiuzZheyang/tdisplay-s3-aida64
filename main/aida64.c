@@ -18,7 +18,7 @@ extern void set_monitor_param(int cpu_rate, int cpu_temp, int cpu_power,
 
 static TaskHandle_t aida64_task_handle = NULL;
 static bool aida64_running = false;
-static int  aida64_sock = -1;          // 仅供 aida64_monitor_stop() 强制唤醒 read()
+static int  aida64_sock = -1;
 static bool is_connected = false;
 
 #define AIDA64_PORT_NUM 7789
@@ -49,7 +49,6 @@ static int parse_int_after_key(const char *data, const char *key, int *out)
     const char *p = data;
     size_t klen = strlen(key);
     while ((p = strstr(p, key)) != NULL) {
-        /* 边界检查：避免 SIV4 误匹配 SIV40/SIV41… */
         char next = *(p + klen);
         if (next == '|' || next == ':' || next == '=' || next == ' ' ||
             next == '\t' || next == '\r' || next == '\n' || next == '{' || next == '\0') {
@@ -74,7 +73,6 @@ static void sse_reset(void) { sse_len = 0; }
 
 static void sse_emit(void)
 {
-    /* 主字段：必须看到 CPU 使用率才发射（其它键缺失则补 0） */
     if (!strstr(sse_buf, K_CPU_RATE)) return;
     aida64_data_t d;
     memset(&d, 0, sizeof(d));
@@ -103,22 +101,18 @@ static void sse_feed(const char *chunk, int len)
     bool has_gpu  = strstr(sse_buf, K_GPU_RATE) != NULL;
 
     if (strstr(sse_buf, "\n\n") || strstr(sse_buf, "\r\n\r\n")) {
-        /* 事件边界（SSE 以空行分隔） */
         sse_emit();
         sse_reset();
     } else if (has_cpu && (has_temp || has_gpu)) {
-        /* 兼容「一次推送全部字段、无空行」的格式 */
         sse_emit();
         sse_reset();
     } else if (sse_len >= SSE_BUF_LEN - 2) {
-        /* 溢出保护（也会清掉 HTTP 响应头之类的前缀） */
         sse_emit();
         sse_reset();
     }
 }
 
-/* ===== 纯 BSD socket：绕开 esp_http_client / esp-tls =====
-/* AIDA64 服务器 IP 从 wifi_manager 动态获取 */
+/* ===== AIDA64 服务器 IP（从 wifi_manager 动态获取）===== */
 static const char *get_aida64_server(void)
 {
     extern const char *wifi_manager_get_aida64_ip(void);
@@ -126,7 +120,12 @@ static const char *get_aida64_server(void)
     const char *ip = wifi_manager_get_aida64_ip();
     if (ip && ip[0]) snprintf(cached, sizeof(cached), "%s", ip);
     return cached[0] ? cached : "192.168.1.121";
-} */
+}
+
+/* ===== 纯 BSD socket：绕开 esp_http_client / esp-tls =====
+ * AIDA64 自带的 mini HTTP 服务器会主动 RST 经过 esp-tls 封装的连接，
+ * 而 curl / 浏览器那种裸 TCP + 普通 GET 则被正常接受。
+ * 这里直接用 lwIP 的 BSD socket API，不经过 esp-tls。 */
 static int aida64_socket_connect(const char *ip)
 {
     struct sockaddr_in dest;
@@ -145,10 +144,8 @@ static int aida64_socket_connect(const char *ip)
         return -1;
     }
 
-    /* 接收超时：让 read() 周期性返回，以便检查 aida64_running 实现优雅退出 */
     struct timeval tv = { .tv_sec = 2, .tv_usec = 0 };
     setsockopt(sock, SOL_SOCKET, SO_RCVTIMEO, &tv, sizeof(tv));
-    /* 启用 TCP keepalive，让对端崩溃/断网时能被探活 */
     int keepalive = 1;
     setsockopt(sock, SOL_SOCKET, SO_KEEPALIVE, &keepalive, sizeof(keepalive));
 
@@ -222,7 +219,6 @@ static void aida64_monitor_task(void *param)
                 alive = false;
             } else {
                 if (errno == EINTR || errno == EAGAIN || errno == ETIMEDOUT) {
-                    /* 2s 接收超时或被信号打断：仅重新检查 running 标志 */
                     continue;
                 }
                 ESP_LOGE(TAG, "read() error: %d (%s), reconnecting...",
@@ -247,7 +243,7 @@ static void aida64_monitor_task(void *param)
 
 void aida64_monitor_start(const char *ip)
 {
-    (void)ip; /* 忽略参数，始终从 wifi_manager 读取 */
+    (void)ip;
     if (aida64_running) return;
     aida64_running = true;
     xTaskCreatePinnedToCore(aida64_monitor_task, "AIDA64", 8192,
@@ -257,7 +253,6 @@ void aida64_monitor_start(const char *ip)
 void aida64_monitor_stop(void)
 {
     aida64_running = false;
-    /* 强制唤醒阻塞在 read() 上的任务，使其尽快退出循环 */
     if (aida64_sock >= 0) {
         close(aida64_sock);
         aida64_sock = -1;
