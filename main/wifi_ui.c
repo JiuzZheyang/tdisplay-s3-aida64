@@ -89,9 +89,9 @@ void wifi_ui_show_ap_mode(const char *ap_ssid)
     lv_obj_align(ip_lbl, LV_ALIGN_TOP_MID, 0, 155);
 
     /* 旋转加载圈（表示等待中） */
-    lv_obj_t *spinner = lv_preload_create(s_ap_scr);
-    lv_preload_set_spin_speed(spinner, 1200);
-    lv_preload_set_arc_length(spinner, 60);
+    lv_obj_t *spinner = lv_spinner_create(s_ap_scr);
+    lv_spinner_set_spin_speed(spinner, 60, 1200);
+    lv_spinner_set_arc_length(spinner, 60);
     lv_obj_set_size(spinner, 24, 24);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_BG), 0);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_ACCENT), LV_PART_INDICATOR);
