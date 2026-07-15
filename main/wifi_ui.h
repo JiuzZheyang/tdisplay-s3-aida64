@@ -1,6 +1,8 @@
 #ifndef WIFI_UI_H
 #define WIFI_UI_H
 
+#include <lvgl.h>
+
 /*
  * WiFi 配网状态 UI
  *

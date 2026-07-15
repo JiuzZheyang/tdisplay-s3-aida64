@@ -167,8 +167,9 @@ void boot_anim_init(void)
     lv_obj_align(s_pct_lbl, LV_ALIGN_TOP_MID, 0, 158);
 
     /* ---- 旋转加载圈（右下角装饰）---- */
-    lv_obj_t *spinner = lv_spinner_create(s_boot_scr, 60, LV_SPINNER_ARL_LENGTH_PIVOT_CENTER, 1200);
+    lv_obj_t *spinner = lv_spinner_create(s_boot_scr);
     lv_obj_set_size(spinner, 24, 24);
+    lv_obj_set_style_arc_length(spinner, 60, LV_PART_INDICATOR);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_BG), 0);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_ACCENT), LV_PART_INDICATOR);
     lv_obj_align(spinner, LV_ALIGN_TOP_MID, 50, 150);

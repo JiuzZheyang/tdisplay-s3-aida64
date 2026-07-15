@@ -88,9 +88,10 @@ void wifi_ui_show_ap_mode(const char *ap_ssid)
     lv_obj_set_style_text_color(ip_lbl, lv_color_hex(C_TEXT), 0);
     lv_obj_align(ip_lbl, LV_ALIGN_TOP_MID, 0, 155);
 
-    /* 旋转加载圈（表示等待中） */
-    lv_obj_t *spinner = lv_spinner_create(s_ap_scr, 60, LV_SPINNER_ARL_LENGTH_PIVOT_CENTER, 1200);
+    /* 旋转加载圈（LVGL v9: lv_spinner_create 只接收父对象参数） */
+    lv_obj_t *spinner = lv_spinner_create(s_ap_scr);
     lv_obj_set_size(spinner, 24, 24);
+    lv_obj_set_style_arc_length(spinner, 60, LV_PART_INDICATOR);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_BG), 0);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_ACCENT), LV_PART_INDICATOR);
     lv_obj_align(spinner, LV_ALIGN_TOP_MID, 0, 190);
