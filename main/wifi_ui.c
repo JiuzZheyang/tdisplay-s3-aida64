@@ -91,7 +91,7 @@ void wifi_ui_show_ap_mode(const char *ap_ssid)
     /* 旋转加载圈（LVGL v9: lv_spinner_create 只接收父对象参数） */
     lv_obj_t *spinner = lv_spinner_create(s_ap_scr);
     lv_obj_set_size(spinner, 24, 24);
-    lv_obj_set_style_arc_length(spinner, 60, LV_PART_INDICATOR);
+    // arc length: default is fine for spinner
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_BG), 0);
     lv_obj_set_style_arc_color(spinner, lv_color_hex(C_ACCENT), LV_PART_INDICATOR);
     lv_obj_align(spinner, LV_ALIGN_TOP_MID, 0, 190);
