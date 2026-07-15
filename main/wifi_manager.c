@@ -5,6 +5,7 @@
 #include "esp_event.h"
 #include "nvs_flash.h"
 #include "nvs.h"
+#include "esp_mac.h"
 #include "esp_http_server.h"
 #include "web_pages.h"
 #include <string.h>
@@ -13,7 +14,7 @@
 static const char *TAG = "wifi_mgr";
 
 /* NVS */
-#define NVS_NS       "wifi"
+#define NVS_NS        "wifi"
 #define NVS_KEY_SSID  "sta_ssid"
 #define NVS_KEY_PASS  "sta_pass"
 #define NVS_KEY_AIDA  "aida64_ip"
@@ -51,15 +52,16 @@ static nvs_handle_t s_nvs = 0;
 /* STA 连接超时检测 */
 static TaskHandle_t s_sta_timeout_task = NULL;
 
-/* ===================== NVS ===================== */
+/* ===================== NVS（内部封装） ===================== */
 
-static bool nvs_open(void)
+static bool wm_nvs_open(void)
 {
     if (s_nvs) return true;
     if (nvs_open(NVS_NS, NVS_READWRITE, &s_nvs) != ESP_OK) { s_nvs = 0; return false; }
     return true;
 }
-static void nvs_close(void)
+
+static void wm_nvs_close(void)
 {
     if (s_nvs) { nvs_close(s_nvs); s_nvs = 0; }
 }
@@ -216,7 +218,6 @@ static void wifi_event_handler(void *arg, esp_event_base_t ev_base,
         snprintf(s_sta_ip, sizeof(s_sta_ip), IPSTR, IP2STR(&ev->ip_info.ip));
         ESP_LOGI(TAG, "STA got IP: %s", s_sta_ip);
         s_mode = WM_MODE_STA;
-        /* 删除超时任务 */
         if (s_sta_timeout_task) {
             vTaskDelete(s_sta_timeout_task);
             s_sta_timeout_task = NULL;
@@ -237,7 +238,6 @@ static void wifi_ap_start(void)
 {
     if (s_mode == WM_MODE_AP) return;
 
-    /* 停止现有 WiFi */
     esp_wifi_stop();
     esp_wifi_deinit();
 
@@ -253,7 +253,7 @@ static void wifi_ap_start(void)
     ESP_ERROR_CHECK(esp_netif_set_ip_info(ap_netif, &ip_info));
 
     uint8_t mac[6];
-    esp_read_mac(mac, ESP_MAC_WIFI_SOFTAP);
+    ESP_ERROR_CHECK(esp_read_mac(mac, ESP_MAC_WIFI_SOFTAP));
     snprintf(s_ap_ssid, sizeof(s_ap_ssid), "%s%02X%02X", AP_SSID_PREFIX, mac[4], mac[5]);
 
     wifi_config_t ap_cfg = {
@@ -284,7 +284,6 @@ static void wifi_sta_start(const char *ssid, const char *pass)
 {
     if (s_mode == WM_MODE_STA) return;
 
-    /* 停止现有 WiFi */
     esp_wifi_stop();
     esp_wifi_deinit();
 
@@ -300,7 +299,8 @@ static void wifi_sta_start(const char *ssid, const char *pass)
         .sta = { .threshold.authmode = WIFI_AUTH_WPA2_PSK, .pmf_cfg = { .required = false } },
     };
     snprintf((char*)sta_cfg.sta.ssid, sizeof(sta_cfg.sta.ssid), "%s", ssid);
-    if (pass && pass[0]) snprintf((char*)sta_cfg.sta.password, sizeof(sta_cfg.sta.password), "%s", pass);
+    if (pass && pass[0])
+        snprintf((char*)sta_cfg.sta.password, sizeof(sta_cfg.sta.password), "%s", pass);
 
     ESP_ERROR_CHECK(esp_wifi_set_config(WIFI_IF_STA, &sta_cfg));
     ESP_ERROR_CHECK(esp_wifi_start());
@@ -309,7 +309,6 @@ static void wifi_sta_start(const char *ssid, const char *pass)
     s_sta_ip[0] = '\0';
     ESP_LOGI(TAG, "STA starting: %s", ssid);
 
-    /* 启动超时检测任务 */
     if (s_sta_timeout_task == NULL) {
         xTaskCreatePinnedToCore(sta_timeout_task, "sta_timeout", 2048, NULL, 3, &s_sta_timeout_task, 0);
     }
@@ -331,7 +330,7 @@ void wifi_manager_start(void)
     wm_config_t cfg;
     memset(&cfg, 0, sizeof(cfg));
 
-    nvs_open();
+    wm_nvs_open();
     uint8_t configured = 0;
     nvs_get_u8(s_nvs, NVS_KEY_CONF, &configured);
 
@@ -342,10 +341,10 @@ void wifi_manager_start(void)
         nvs_get_str(s_nvs, NVS_KEY_PASS, cfg.sta_pass, &sz);
         sz = sizeof(cfg.aida64_ip);
         nvs_get_str(s_nvs, NVS_KEY_AIDA, cfg.aida64_ip, &sz);
-        nvs_close();
+        wm_nvs_close();
 
         uint8_t mac[6];
-        esp_read_mac(mac, ESP_MAC_WIFI_SOFTAP);
+        ESP_ERROR_CHECK(esp_read_mac(mac, ESP_MAC_WIFI_SOFTAP));
         snprintf(s_ap_ssid, sizeof(s_ap_ssid), "%s%02X%02X", AP_SSID_PREFIX, mac[4], mac[5]);
 
         if (cfg.aida64_ip[0]) snprintf(s_aida64_ip, sizeof(s_aida64_ip), "%s", cfg.aida64_ip);
@@ -356,9 +355,8 @@ void wifi_manager_start(void)
             return;
         }
     }
-    nvs_close();
+    wm_nvs_close();
 
-    /* 未配置或无 SSID → AP 配网 */
     wifi_manager_start_ap_mode();
 }
 
@@ -372,14 +370,14 @@ void wifi_manager_start_ap_mode(void)
 bool wifi_manager_save_and_reboot(const char *sta_ssid, const char *sta_pass,
                                   const char *aida64_ip)
 {
-    nvs_open();
+    wm_nvs_open();
     esp_err_t err = ESP_OK;
     err |= nvs_set_str(s_nvs, NVS_KEY_SSID, sta_ssid);
     err |= nvs_set_str(s_nvs, NVS_KEY_PASS, sta_pass ? sta_pass : "");
     err |= nvs_set_str(s_nvs, NVS_KEY_AIDA, aida64_ip ? aida64_ip : "");
     err |= nvs_set_u8(s_nvs, NVS_KEY_CONF, 1);
     err |= nvs_commit(s_nvs);
-    nvs_close();
+    wm_nvs_close();
 
     if (err != ESP_OK) { ESP_LOGE(TAG, "NVS save failed"); return false; }
     if (aida64_ip && aida64_ip[0])
@@ -394,14 +392,14 @@ bool wifi_manager_save_and_reboot(const char *sta_ssid, const char *sta_pass,
 bool wifi_manager_get_config(wm_config_t *cfg)
 {
     memset(cfg, 0, sizeof(*cfg));
-    nvs_open();
+    wm_nvs_open();
     size_t sz = sizeof(cfg->sta_ssid);
     nvs_get_str(s_nvs, NVS_KEY_SSID, cfg->sta_ssid, &sz);
     sz = sizeof(cfg->sta_pass);
     nvs_get_str(s_nvs, NVS_KEY_PASS, cfg->sta_pass, &sz);
     sz = sizeof(cfg->aida64_ip);
     nvs_get_str(s_nvs, NVS_KEY_AIDA, cfg->aida64_ip, &sz);
-    nvs_close();
+    wm_nvs_close();
     return cfg->sta_ssid[0] != '\0';
 }
 
@@ -426,22 +424,4 @@ int wifi_manager_get_rssi(void)
 
 const char *wifi_manager_get_ap_ssid(void)
 {
-    return s_ap_ssid[0] ? s_ap_ssid : AP_SSID_PREFIX "??";
-}
-
-void wifi_manager_erase_all(void)
-{
-    nvs_open();
-    nvs_erase_key(s_nvs, NVS_KEY_CONF);
-    nvs_erase_key(s_nvs, NVS_KEY_SSID    nvs_erase_key(s_nvs, NVS_KEY_PASS);
-    nvs_erase_key(s_nvs, NVS_KEY_AIDA);
-    nvs_commit(s_nvs);
-    nvs_close();
-    ESP_LOGI(TAG, "NVS erased, rebooting...");
-    vTaskDelay(pdMS_TO_TICKS(300));
-    esp_restart();
-}
-
-void wifi_manager_on_sta_connected(wm_sta_cb_t cb) { s_cb_sta_conn = cb; }
-void wifi_manager_on_sta_disconnected(wm_sta_disc_cb_t cb) { s_cb_sta_disc = cb; }
-void wifi_manager_on_ap_started(wm_ap_cb_t cb) { s_cb_ap_start = cb; }
+    return s_ap_ssid[0] ? s_ap_ssid : AP_SSID_PREFIX "
