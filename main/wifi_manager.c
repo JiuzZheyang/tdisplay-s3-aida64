@@ -110,7 +110,7 @@ static esp_err_t http_config_handler(httpd_req_t *req)
     if (ret <= 0) return httpd_resp_send_err(req, HTTPD_400_BAD_REQUEST, "");
     buf[ret] = '\0';
 
-    char ssid[64] = {0}, pass[128] = {0}, aida[32] = {0};
+    char ssid[128] = {0}, pass[128] = {0}, aida[64] = {0};
 
     /* 简单 JSON 解析 */
     for (char *p = buf; *p; ) {
