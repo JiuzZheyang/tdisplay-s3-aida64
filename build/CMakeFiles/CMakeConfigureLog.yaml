@@ -1502,8 +1502,8 @@ events:
     checks:
       - "Detecting C compiler ABI info"
     directories:
-      source: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-oefaGk"
-      binary: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-oefaGk"
+      source: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-MDiaGm"
+      binary: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-MDiaGm"
     cmakeVariables:
       CMAKE_C_FLAGS: "@\"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags\""
       CMAKE_C_FLAGS_DEBUG: "-g"
@@ -1513,10 +1513,10 @@ events:
       variable: "CMAKE_C_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-oefaGk'
+        Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-MDiaGm'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_35d98
-        [1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags"    -v -o CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
+        Run Build Command(s): /usr/bin/ninja -v cmTC_4bb36
+        [1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags"    -v -o CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c
         Using built-in specs.
         COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         Target: xtensa-esp-elf
@@ -1524,8 +1524,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_35d98.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -version -o /tmp/cckHlacl.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4bb36.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccDNMNln.s
         GNU C23 (crosstool-NG esp-16.1.0_20260609) version 16.1.0 (xtensa-esp-elf)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1542,12 +1542,12 @@ events:
          /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: 562a20f19ccbb6bf7c4a3892c3b38ec4
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj /tmp/cckHlacl.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj /tmp/ccDNMNln.s
         COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.'
-        [2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj -o cmTC_35d98   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.'
+        [2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj -o cmTC_4bb36   && :
         Using built-in specs.
         COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-gcc
         COLLECT_LTO_WRAPPER=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper
@@ -1558,9 +1558,9 @@ events:
         gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) 
         COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_35d98' '-dumpdir' 'cmTC_35d98.'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEpahGn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_35d98 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/cckHKBHn -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_35d98' '-dumpdir' 'cmTC_35d98.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_4bb36' '-dumpdir' 'cmTC_4bb36.'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpEkggp.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_4bb36 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccdPhBhp -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_4bb36' '-dumpdir' 'cmTC_4bb36.'
         
       exitCode: 0
   -
@@ -1595,10 +1595,10 @@ events:
       Parsed C implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-oefaGk']
+        ignore line: [Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-MDiaGm']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_35d98]
-        ignore line: [[1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags"    -v -o CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_4bb36]
+        ignore line: [[1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags"    -v -o CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj -c /usr/share/cmake/Modules/CMakeCCompilerABI.c]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [Target: xtensa-esp-elf]
@@ -1606,8 +1606,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/']
-        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_35d98.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -version -o /tmp/cckHlacl.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/']
+        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1 -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCCompilerABI.c -quiet -dumpdir CMakeFiles/cmTC_4bb36.dir/ -dumpbase CMakeCCompilerABI.c.c -dumpbase-ext .c -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccDNMNln.s]
         ignore line: [GNU C23 (crosstool-NG esp-16.1.0_20260609) version 16.1.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1624,12 +1624,12 @@ events:
         ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: 562a20f19ccbb6bf7c4a3892c3b38ec4]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/']
-        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj /tmp/cckHlacl.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/']
+        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj /tmp/ccDNMNln.s]
         ignore line: [COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.']
-        ignore line: [[2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_35d98.dir/CMakeCCompilerABI.c.obj -o cmTC_35d98   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.']
+        ignore line: [[2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-gcc @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_4bb36.dir/CMakeCCompilerABI.c.obj -o cmTC_4bb36   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-gcc]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper]
@@ -1640,13 +1640,13 @@ events:
         ignore line: [gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) ]
         ignore line: [COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_35d98' '-dumpdir' 'cmTC_35d98.']
-        link line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccEpahGn.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_35d98 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/cckHKBHn -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_4bb36' '-dumpdir' 'cmTC_4bb36.']
+        link line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccpEkggp.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_4bb36 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccdPhBhp -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccEpahGn.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccpEkggp.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -1655,7 +1655,7 @@ events:
           arg [--sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32s3.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_35d98] ==> ignore
+          arg [cmTC_4bb36] ==> ignore
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o]
@@ -1667,7 +1667,7 @@ events:
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib]
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [@/tmp/cckHKBHn] ==> ignore
+          arg [@/tmp/ccdPhBhp] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [-lnosys] ==> lib [nosys]
@@ -1675,7 +1675,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_35d98' '-dumpdir' 'cmTC_35d98.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_4bb36' '-dumpdir' 'cmTC_4bb36.']
         ignore line: []
         ignore line: []
         collapse obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o] ==> [/opt/xtensa-toolchain/xtensa-esp-elf/xtensa-esp-elf/lib/esp32s3/crt0.o]
@@ -1707,8 +1707,8 @@ events:
     checks:
       - "Detecting CXX compiler ABI info"
     directories:
-      source: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-GMDAmA"
-      binary: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-GMDAmA"
+      source: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-CJPlhC"
+      binary: "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-CJPlhC"
     cmakeVariables:
       CMAKE_CXX_FLAGS: "@\"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags\""
       CMAKE_CXX_FLAGS_DEBUG: "-g"
@@ -1719,10 +1719,10 @@ events:
       variable: "CMAKE_CXX_ABI_COMPILED"
       cached: true
       stdout: |
-        Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-GMDAmA'
+        Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-CJPlhC'
         
-        Run Build Command(s): /usr/bin/ninja -v cmTC_5f0a1
-        [1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags"    -v -o CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
+        Run Build Command(s): /usr/bin/ninja -v cmTC_890da
+        [1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags"    -v -o CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp
         Using built-in specs.
         COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         Target: xtensa-esp-elf
@@ -1730,8 +1730,8 @@ events:
         Thread model: posix
         Supported LTO compression algorithms: zlib zstd
         gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) 
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5f0a1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccAgkLGC.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_890da.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccECfkBE.s
         GNU C++20 (crosstool-NG esp-16.1.0_20260609) version 16.1.0 (xtensa-esp-elf)
         	compiled by GNU C version 15.2.0, GMP version 6.3.0, MPFR version 4.2.2, MPC version 1.3.1, isl version isl-0.27-GMP
         
@@ -1754,12 +1754,12 @@ events:
          /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/include
         End of search list.
         Compiler executable checksum: ba0e98e943d1b018bd2b417a6c8ab43c
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccAgkLGC.s
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccECfkBE.s
         COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.'
-        [2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_5f0a1   && :
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.'
+        [2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_890da   && :
         Using built-in specs.
         COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-g++
         COLLECT_LTO_WRAPPER=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper
@@ -1770,9 +1770,9 @@ events:
         gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) 
         COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/
         LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_5f0a1' '-dumpdir' 'cmTC_5f0a1.'
-         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMcBOgE.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_5f0a1 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccieadgE -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o
-        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_5f0a1' '-dumpdir' 'cmTC_5f0a1.'
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_890da' '-dumpdir' 'cmTC_890da.'
+         /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdPcjeF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_890da /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccDcPEfF -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o
+        COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_890da' '-dumpdir' 'cmTC_890da.'
         
       exitCode: 0
   -
@@ -1813,10 +1813,10 @@ events:
       Parsed CXX implicit link information:
         link line regex: [^( *|.*[/\\])(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)|CMAKE_LINK_STARTFILE-NOTFOUND|([^/\\]+-)?ld|collect2)[^/\\]*( |$)]
         linker tool regex: [^[ 	]*(->|")?[ 	]*(([^"]*[/\\])?(ld[0-9]*(|\\.[a-rt-z][a-z]*|\\.s[a-np-z][a-z]*|\\.so[a-z]+)))("|,| |$)]
-        ignore line: [Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-GMDAmA']
+        ignore line: [Change Dir: '/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/CMakeScratch/TryCompile-CJPlhC']
         ignore line: []
-        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_5f0a1]
-        ignore line: [[1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags"    -v -o CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
+        ignore line: [Run Build Command(s): /usr/bin/ninja -v cmTC_890da]
+        ignore line: [[1/2] /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++   @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags"    -v -o CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj -c /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [Target: xtensa-esp-elf]
@@ -1824,8 +1824,8 @@ events:
         ignore line: [Thread model: posix]
         ignore line: [Supported LTO compression algorithms: zlib zstd]
         ignore line: [gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) ]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/']
-        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_5f0a1.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccAgkLGC.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/']
+        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/cc1plus -quiet -v -imultilib esp32s3 -iprefix /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/ -isysroot /opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf /usr/share/cmake/Modules/CMakeCXXCompilerABI.cpp -quiet -dumpdir CMakeFiles/cmTC_890da.dir/ -dumpbase CMakeCXXCompilerABI.cpp.cpp -dumpbase-ext .cpp -mdynconfig=xtensa_esp32s3.so -version -o /tmp/ccECfkBE.s]
         ignore line: [GNU C++20 (crosstool-NG esp-16.1.0_20260609) version 16.1.0 (xtensa-esp-elf)]
         ignore line: [	compiled by GNU C version 15.2.0  GMP version 6.3.0  MPFR version 4.2.2  MPC version 1.3.1  isl version isl-0.27-GMP]
         ignore line: []
@@ -1848,12 +1848,12 @@ events:
         ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/include]
         ignore line: [End of search list.]
         ignore line: [Compiler executable checksum: ba0e98e943d1b018bd2b417a6c8ab43c]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/']
-        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccAgkLGC.s]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/']
+        ignore line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/as --traditional-format --dynconfig=xtensa_esp32s3.so -o CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj /tmp/ccECfkBE.s]
         ignore line: [COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.']
-        ignore line: [[2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_5f0a1.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_5f0a1   && :]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj' '-c' '-dumpdir' 'CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.']
+        ignore line: [[2/2] : && /opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp32s3-elf-g++ @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/cxxflags" @"/root/.openclaw/workspace/tdisplay-s3-aida64/build/toolchain/ldflags" -v CMakeFiles/cmTC_890da.dir/CMakeCXXCompilerABI.cpp.obj -o cmTC_890da   && :]
         ignore line: [Using built-in specs.]
         ignore line: [COLLECT_GCC=/opt/xtensa-toolchain/xtensa-esp-elf/bin/xtensa-esp-elf-g++]
         ignore line: [COLLECT_LTO_WRAPPER=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper]
@@ -1864,13 +1864,13 @@ events:
         ignore line: [gcc version 16.1.0 (crosstool-NG esp-16.1.0_20260609) ]
         ignore line: [COMPILER_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/bin/]
         ignore line: [LIBRARY_PATH=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/:/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib/]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_5f0a1' '-dumpdir' 'cmTC_5f0a1.']
-        link line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccMcBOgE.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_5f0a1 /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccieadgE -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_890da' '-dumpdir' 'cmTC_890da.']
+        link line: [ /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2 -plugin /opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so -plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper -plugin-opt=-fresolution=/tmp/ccdPcjeF.res -plugin-opt=-pass-through=-lgcc -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lnosys -plugin-opt=-pass-through=-lc -plugin-opt=-pass-through=-lgcc --sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf --dynconfig=xtensa_esp32s3.so -o cmTC_890da /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib/esp32s3 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0 -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib -L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib @/tmp/ccDcPEfF -lgcc -lc -lnosys -lc -lgcc /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o /opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/collect2] ==> ignore
           arg [-plugin] ==> ignore
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/liblto_plugin.so] ==> ignore
           arg [-plugin-opt=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../libexec/gcc/xtensa-esp-elf/16.1.0/lto-wrapper] ==> ignore
-          arg [-plugin-opt=-fresolution=/tmp/ccMcBOgE.res] ==> ignore
+          arg [-plugin-opt=-fresolution=/tmp/ccdPcjeF.res] ==> ignore
           arg [-plugin-opt=-pass-through=-lgcc] ==> ignore
           arg [-plugin-opt=-pass-through=-lc] ==> ignore
           arg [-plugin-opt=-pass-through=-lnosys] ==> ignore
@@ -1879,7 +1879,7 @@ events:
           arg [--sysroot=/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf] ==> ignore
           arg [--dynconfig=xtensa_esp32s3.so] ==> ignore
           arg [-o] ==> ignore
-          arg [cmTC_5f0a1] ==> ignore
+          arg [cmTC_890da] ==> ignore
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crti.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtbegin.o]
@@ -1891,7 +1891,7 @@ events:
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib]
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/lib]
           arg [-L/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib] ==> dir [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../xtensa-esp-elf/usr/lib]
-          arg [@/tmp/ccieadgE] ==> ignore
+          arg [@/tmp/ccDcPEfF] ==> ignore
           arg [-lgcc] ==> lib [gcc]
           arg [-lc] ==> lib [c]
           arg [-lnosys] ==> lib [nosys]
@@ -1899,7 +1899,7 @@ events:
           arg [-lgcc] ==> lib [gcc]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtend.o]
           arg [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o] ==> obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/esp32s3/crtn.o]
-        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_5f0a1' '-dumpdir' 'cmTC_5f0a1.']
+        ignore line: [COLLECT_GCC_OPTIONS='-mdynconfig=xtensa_esp32s3.so' '-v' '-o' 'cmTC_890da' '-dumpdir' 'cmTC_890da.']
         ignore line: []
         ignore line: []
         collapse obj [/opt/xtensa-toolchain/xtensa-esp-elf/bin/../lib/gcc/xtensa-esp-elf/16.1.0/../../../../xtensa-esp-elf/lib/esp32s3/crt0.o] ==> [/opt/xtensa-toolchain/xtensa-esp-elf/xtensa-esp-elf/lib/esp32s3/crt0.o]

@@ -18,7 +18,7 @@ set(HEAD_HASH)
 file(READ "/root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/git-data/HEAD" HEAD_CONTENTS LIMIT 1024)
 
 string(STRIP "${HEAD_CONTENTS}" HEAD_CONTENTS)
-set(GIT_DIR "/root/.openclaw/workspace/.git")
+set(GIT_DIR "/root/.openclaw/workspace/tdisplay-s3-aida64/.git")
 # handle git-worktree
 if(EXISTS "${GIT_DIR}/commondir")
 	file(READ "${GIT_DIR}/commondir" GIT_DIR_NEW LIMIT 1024)

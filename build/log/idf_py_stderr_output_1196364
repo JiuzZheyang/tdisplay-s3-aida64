@@ -1,4 +1,4 @@
-Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/opt/esp-idf-venv/bin/python -DESP_PLATFORM=1 -DIDF_TARGET=esp32s3 -DCCACHE_ENABLE=0 /root/.openclaw/workspace/tdisplay-s3-aida64
+Command: cmake -G Ninja -DPYTHON_DEPS_CHECKED=1 -DPYTHON=/opt/esp-idf-venv/bin/python -DESP_PLATFORM=1 -DCCACHE_ENABLE=0 /root/.openclaw/workspace/tdisplay-s3-aida64
 CMake Error at build/CMakeFiles/git-data/grabRef.cmake:48 (file):
   file failed to open for reading (No such file or directory):
 
@@ -11,17 +11,6 @@ Call Stack (most recent call first):
   /opt/esp-idf-5.5.4/tools/cmake/idf.cmake:55 (__build_init)
   /opt/esp-idf-5.5.4/tools/cmake/project.cmake:29 (include)
   CMakeLists.txt:3 (include)
-
-
-CMake Error at build/CMakeFiles/git-data/grabRef.cmake:48 (file):
-  file failed to open for reading (No such file or directory):
-
-    /root/.openclaw/workspace/tdisplay-s3-aida64/build/CMakeFiles/git-data/head-ref
-Call Stack (most recent call first):
-  /opt/esp-idf-5.5.4/tools/cmake/third_party/GetGitRevisionDescription.cmake:83 (include)
-  /opt/esp-idf-5.5.4/tools/cmake/third_party/GetGitRevisionDescription.cmake:93 (get_git_head_revision)
-  /opt/esp-idf-5.5.4/tools/cmake/project.cmake:731 (git_describe)
-  CMakeLists.txt:5 (project)
 
 
 CMake Error at /opt/esp-idf-5.5.4/tools/cmake/component.cmake:231 (message):
