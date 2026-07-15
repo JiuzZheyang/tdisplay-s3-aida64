@@ -12,23 +12,17 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install ESP-IDF v5.5.4
+      - name: Clone ESP-IDF v5.5.4 (shallow)
         run: |
-          cd /tmp
-          curl -sL https://dl.espressif.com/dl/esp-idf/esp-idf-v5.5.4.zip -o esp-idf.zip
-          unzip -q esp-idf.zip
-          rm esp-idf.zip
-          mv esp-idf-v5.5.4 /opt/esp-idf
+          git clone --depth 1 --branch v5.5.4 \
+            https://github.com/espressif/esp-idf.git /opt/esp-idf
 
-      - name: Setup environment
+      - name: Install ESP-IDF
         run: |
-          . /opt/esp-idf/install.sh all
-          . /opt/esp-idf/export.sh
-          idf.py --version
+          /opt/esp-idf/install.sh all
 
       - name: Remove broken managed components
-        run: |
-          rm -rf managed_components
+        run: rm -rf managed_components
 
       - name: Build
         run: |
